@@ -17,8 +17,8 @@ const Navbar = () => {
                             {/* Hide "Powered By" text on smaller screens */}
                             <span className="hidden mx-4 mt-3 font-lato text-xs md:inline-block">Powered By</span>
                             {/* Add margin to B1 and B2 images */}
-                            <img className="hidden md:block ml-2" src={B1} alt="B1" />
-                            <img className="hidden md:block ml-2" src={B2} alt="B2" />
+                            <img className="hidden md:block ml-2 h-auto w-10" src={B1} alt="B1" />
+                            <img className="hidden md:block ml-2 " src={B2} alt="B2" />
                         </a>
                     </div>
                     <div className="flex-shrink-0 flex px-2 py-3 items-center space-x-8">
