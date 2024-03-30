@@ -14,10 +14,10 @@ const Hero = () => {
                     <p className="text-xl lg:text-2xl mt-6 py-0 text-[#098F8A] font-lato">
                         Multilingual, efficient query management, data driven insights for growth
                     </p>
-                    <p className="mt-8 font-bold font-lato  md:mt-12">
+                    <p className="mt-8 mb-4 font-bold font-lato  md:mt-12">
                         <button
                             type="button"
-                            className="  py-4  rounded-xl px-12
+                            className="py-4 w-2/4 text-sm  lg:text-2xl lg:w-1/4 rounded-xl px-8
     
                             bg-[#098F8A]
                             hover:bg-teal-600

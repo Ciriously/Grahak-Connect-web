@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.svg';
+import B1 from '../images/B1.svg';
+import B2 from '../images/B2.svg';
 
 const Navbar = () => {
     return (
@@ -10,9 +12,13 @@ const Navbar = () => {
                         <a className="flex items-center" href="#">
                             <img className="block h-12 w-auto mr-2" src={logo} alt="Logo" />
                             <div className="text-3xl hidden md:block">
-                                <span className="bg-gradient-to-t from-[#098F8A] font-extrabold font-lato to-white bg-clip-text text-transparent">Grahak Konnect</span>
+                                <span className="bg-gradient-to-t from-[#098F8A] font-extrabold font-baloo2 to-white bg-clip-text text-transparent">Grahak Konnect</span>
                             </div>
-
+                            {/* Hide "Powered By" text on smaller screens */}
+                            <span className="hidden mx-4 mt-3 font-lato text-xs md:inline-block">Powered By</span>
+                            {/* Add margin to B1 and B2 images */}
+                            <img className="hidden md:block ml-2" src={B1} alt="B1" />
+                            <img className="hidden md:block ml-2" src={B2} alt="B2" />
                         </a>
                     </div>
                     <div className="flex-shrink-0 flex px-2 py-3 items-center space-x-8">

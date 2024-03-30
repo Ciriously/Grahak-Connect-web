@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         lato: ["Lato", "sans-serif"],
+        baloo2: ["Baloo 2", "cursive"],
       },
     },
   },
