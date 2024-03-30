@@ -5,6 +5,7 @@ module.exports = {
       fontFamily: {
         lato: ["Lato", "sans-serif"],
         baloo2: ["Baloo 2", "cursive"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

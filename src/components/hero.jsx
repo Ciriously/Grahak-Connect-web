@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 import Heroimg from "../images/hero.svg";
 
 const Hero = () => {
@@ -16,15 +17,16 @@ const Hero = () => {
                         Multilingual, efficient query management, data-driven insights for growth
                     </p>
                     <p className="mt-8 mb-4 font-bold font-lato md:mt-12">
-                        <button
-                            type="button"
+                        {/* Change button to Link and specify the to prop */}
+                        <Link
+                            to="/Onboarding" // Specify the URL of the onboarding page
                             className="py-4 w-2/4 text-sm lg:text-2xl lg:w-1/4 rounded-xl px-8
                             bg-[#098F8A]
                             hover:bg-teal-600
                             text-white"
                         >
                             Try now
-                        </button>
+                        </Link>
                     </p>
                 </div>
                 <div className="lg:w-1/2">
