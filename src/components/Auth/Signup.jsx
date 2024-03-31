@@ -11,10 +11,10 @@ const Signup = () => {
     return (
         <div><div className="flex h-screen">
             <div className="hidden lg:flex items-center justify-center flex-1 bg-[#B8E1E2]  bg-opacity-40  text-black"><div className='flex justify-center item'>
-                <img src={Auth} alt="auth" className="hidden lg:block" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+                <img src={Auth} alt="auth" className="hidden lg:block h-[45rem]" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
             </div></div>
             <div className="hidden absolute left-8 lg:flex  flex-1   text-black">
-                <div className="max-w-2xl mt-4">
+                <div className="max-w-2xl mt-8">
                     <Header />
                 </div>
 
