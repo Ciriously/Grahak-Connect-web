@@ -19,7 +19,7 @@ const Hero = () => {
                     <p className="mt-8 mb-4 font-bold font-lato md:mt-12">
                         {/* Change button to Link and specify the to prop */}
                         <Link
-                            to="/Onboarding" // Specify the URL of the onboarding page
+                            to="/Signup" // Specify the URL of the onboarding page
                             className="py-4 w-2/4 text-sm lg:text-2xl lg:w-1/4 rounded-xl px-8
                             bg-[#098F8A]
                             hover:bg-teal-600

@@ -1,10 +1,15 @@
 import React from 'react'
-import SignUp from '../components/Onboarding/Signup'
+import OnBoardingPages from '../components/Onboarding/OnBoardingPages'
+import Header from '../shared/Header'
 
 const Onboarding = () => {
     return (
         <div>
-            <SignUp />
+            <div className="flex bg-[#B8E1E2] bg-opacity-40 justify-center items-start">
+
+                <Header />
+            </div>
+            <OnBoardingPages />
         </div>
     )
 }

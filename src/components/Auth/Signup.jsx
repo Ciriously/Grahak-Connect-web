@@ -3,6 +3,8 @@ import Logo from '../../images/logo.svg'
 import { Link } from 'react-router-dom'
 import Header from '../../shared/Header'
 import Auth from '../../images/Auth/Auth.svg'
+import Google from '../../images/Auth/Google.png'
+import Apple from '../../images/Auth/Apple.png'
 
 
 const Signup = () => {
@@ -18,7 +20,7 @@ const Signup = () => {
 
             </div>
             {/* Right Pane */}
-            <div className="w-full bg-gray-100 lg:w-1/2 font-poppins flex items-center justify-center">
+            <div className="w-full bg-white lg:w-1/2 font-poppins flex items-center justify-center">
                 <div className="max-w-md w-full px-[-4rem]">
                     <h1 className="text-4xl font-Regular mb-6 text-black text-left">
                         Create an account
@@ -46,7 +48,7 @@ const Signup = () => {
                             <div className="w-1/2">
                                 <label
                                     htmlFor="lastname"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-[#666666]"
                                 >
                                     Last Name
                                 </label>
@@ -61,7 +63,7 @@ const Signup = () => {
                         <div>
                             <label
                                 htmlFor="email"
-                                className="block text-sm font-medium text-gray-700"
+                                className="block text-sm font-medium text-[#666666]"
                             >
                                 Email
                             </label>
@@ -76,7 +78,7 @@ const Signup = () => {
                             <div className="w-1/2">
                                 <label
                                     htmlFor="firstname"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-[#666666]"
                                 >
                                     Password
                                 </label>
@@ -90,7 +92,7 @@ const Signup = () => {
                             <div className="w-1/2">
                                 <label
                                     htmlFor="lastname"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-[#666666]"
                                 >
                                     Confirm your password
                                 </label>
@@ -102,27 +104,42 @@ const Signup = () => {
                                 />
                             </div>
                         </div>
-                        <span>Use 8 or more characters with a mix of letters, numbers & symbols</span>
+                        <p className='text-[#666666] py-1 text-sm'>Use 8 or more characters with a mix of letters, numbers & symbols</p>
 
                         <div className="flex items-center">
                             <input type="checkbox" id="showPassword" name="showPassword" className="mr-2" />
                             <label htmlFor="showPassword" className="text-sm font-medium text-gray-700">Show Password</label>
                         </div>
-                        <div className='flex'>
+                        <div className='flex justify-center'>
                             <button
                                 type="submit"
-                                className="w-2/4 bg-[#098F8A] text-white p-4 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300"
+                                className="w-2/4 bg-[#098F8A] text-white p-4 rounded-3xl hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300"
                             >
-                                Create an account
+                                <Link to="/onBoarding">
+                                    Create an account
+                                </Link>
                             </button>
                         </div>
-                        <div className="mt-4 flex flex-col lg:flex-row items-center justify-between">
-                            <div className="w-full lg:w-1/2 mb-2 lg:mb-0">
-                                {/* Google button */}
-                            </div>
-                            <div className="w-full lg:w-1/2 ml-0 lg:ml-2">
-                                {/* GitHub button */}
-                            </div>
+                        <div className="flex items-center justify-center my-4">
+                            <hr className="flex-grow border-t border-gray-300" />
+                            <span className="px-2 text-gray-500">Or</span>
+                            <hr className="flex-grow border-t border-gray-300" />
+                        </div>
+                        <div className="flex space-x-4">
+                            <button
+                                type="button"
+                                className="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-3xl border-blue-500 border-2 hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300"
+                            >
+                                <img src={Google} alt="Google logo" className="w-4" />
+                                Sign Up with Google
+                            </button>
+                            <button
+                                type="button"
+                                className="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-3xl border-blue-500 border-2 hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300"
+                            >
+                                <img src={Apple} alt="Apple logo" className="w-4" />
+                                Sign Up with Apple
+                            </button>
                         </div>
                     </form>
 
