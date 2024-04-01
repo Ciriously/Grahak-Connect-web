@@ -3,6 +3,10 @@ import Ecom from "../../../images/Onboarding/Ecom.svg";
 import Healthcare from "../../../images/Onboarding/healthcare.svg";
 import Marketing from "../../../images/Onboarding/marketing.svg";
 import Settings from "../../../images/Onboarding/Setting.svg";
+import { useDispatch ,useSelector} from 'react-redux';
+import { updateUserCompanyType } from '../../../redux/signupActions';
+import { getDatabase, ref, set } from "firebase/database";
+import '../../../firebase.js';
 
 const GridItem = ({ imgSrc, altText, text, onClick, isSelected }) => (
     <div
@@ -17,7 +21,10 @@ const GridItem = ({ imgSrc, altText, text, onClick, isSelected }) => (
 );
 
 const Companytype = () => {
+    const dispatch = useDispatch();
     const [selectedItem, setSelectedItem] = useState(null);
+    const currentUserId = useSelector(state => state.signup.currentUserId);
+    const userData = useSelector(state => state.signup.formData[currentUserId]);
 
     const items = [
         { imgSrc: Ecom, altText: 'Ecommerce', text: 'Ecommerce' },
@@ -27,7 +34,16 @@ const Companytype = () => {
     ];
 
     const handleItemClick = (index) => {
+        console.log(items[index].text);
         setSelectedItem(index);
+        dispatch(updateUserCompanyType(currentUserId, items[index].text));
+
+
+        // Submit the user data to Firebase
+        const db = getDatabase();
+        set(ref(db, 'users/' + currentUserId), userData)
+            .then(() => console.log('User data submitted successfully'))
+            .catch((error) => console.error('Error submitting user data:', error));
     };
 
     return (

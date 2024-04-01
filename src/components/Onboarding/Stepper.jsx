@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-const Stepper = () => {
+const Stepper = ({ currentStep }) => {
     const [progress, setProgress] = useState(1);
 
     const stepCompleted = (stepNumber) => {
-        return stepNumber <= progress;
+        return stepNumber <= currentStep;
     };
 
     return (
