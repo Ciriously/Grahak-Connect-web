@@ -3,7 +3,7 @@ import OnBoardingPages from '../components/Onboarding/OnBoardingPages'
 import Header from '../shared/Header'
 
 const Onboarding = () => {
-    // Add CSS styles to prevent overflow
+   
     document.body.style.overflow = 'hidden';
 
     return (

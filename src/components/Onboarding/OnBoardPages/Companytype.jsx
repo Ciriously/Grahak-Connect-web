@@ -3,6 +3,9 @@ import Ecom from "../../../images/Onboarding/Ecom.svg";
 import Healthcare from "../../../images/Onboarding/healthcare.svg";
 import Marketing from "../../../images/Onboarding/marketing.svg";
 import Settings from "../../../images/Onboarding/Setting.svg";
+import { useDispatch ,useSelector} from 'react-redux';
+import { updateUserCompanyType } from '../../../redux/signupActions';
+
 
 const GridItem = ({ imgSrc, altText, text, onClick, isSelected }) => (
     <div
@@ -17,7 +20,9 @@ const GridItem = ({ imgSrc, altText, text, onClick, isSelected }) => (
 );
 
 const Companytype = () => {
+    const dispatch = useDispatch();
     const [selectedItem, setSelectedItem] = useState(null);
+    const currentUserId = useSelector(state => state.signup.currentUserId);
 
     const items = [
         { imgSrc: Ecom, altText: 'Ecommerce', text: 'Ecommerce' },
@@ -27,9 +32,14 @@ const Companytype = () => {
     ];
 
     const handleItemClick = (index) => {
+        console.log(items[index].text);
         setSelectedItem(index);
-    };
+        dispatch(updateUserCompanyType(currentUserId, items[index].text));
 
+
+        // Submit the user data to Firebase
+        
+    }
     return (
         <div className='px-16'>
             <h1 className="text-[#170F49] text-2xl mb-2 font-poppins font-bold">Company details</h1>
