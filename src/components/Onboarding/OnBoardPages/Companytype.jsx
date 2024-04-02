@@ -5,8 +5,7 @@ import Marketing from "../../../images/Onboarding/marketing.svg";
 import Settings from "../../../images/Onboarding/Setting.svg";
 import { useDispatch ,useSelector} from 'react-redux';
 import { updateUserCompanyType } from '../../../redux/signupActions';
-import { getDatabase, ref, set } from "firebase/database";
-import '../../../firebase.js';
+
 
 const GridItem = ({ imgSrc, altText, text, onClick, isSelected }) => (
     <div
@@ -24,7 +23,6 @@ const Companytype = () => {
     const dispatch = useDispatch();
     const [selectedItem, setSelectedItem] = useState(null);
     const currentUserId = useSelector(state => state.signup.currentUserId);
-    const userData = useSelector(state => state.signup.formData[currentUserId]);
 
     const items = [
         { imgSrc: Ecom, altText: 'Ecommerce', text: 'Ecommerce' },
@@ -40,12 +38,8 @@ const Companytype = () => {
 
 
         // Submit the user data to Firebase
-        const db = getDatabase();
-        set(ref(db, 'users/' + currentUserId), userData)
-            .then(() => console.log('User data submitted successfully'))
-            .catch((error) => console.error('Error submitting user data:', error));
-    };
-
+        
+    }
     return (
         <div className='px-16'>
             <h1 className="text-[#170F49] text-2xl mb-2 font-poppins font-bold">Company details</h1>

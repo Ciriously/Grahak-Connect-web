@@ -67,6 +67,41 @@ const signupReducer = (state = initialState, action) => {
             },
         },
     };
+    case "UPDATE_USER_WEBSITE_URL":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          [action.payload.id]: {
+            ...state.formData[action.payload.id],
+            websiteUrl: action.payload.websiteUrl,
+          },
+        },
+      };
+
+    case "UPDATE_USER_COMPANY_LOGO":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          [action.payload.id]: {
+            ...state.formData[action.payload.id],
+            companyLogo: action.payload.companyLogo,
+          },
+        },
+      };
+      case "UPDATE_USER_PRODUCTS":
+  return {
+    ...state,
+    formData: {
+      ...state.formData,
+      [action.payload.id]: {
+        ...state.formData[action.payload.id],
+        products: action.payload.products,
+      },
+    },
+  };
+
     default:
       return state;
   }
