@@ -19,10 +19,10 @@ const ContactDetails = () => {
             dispatch(updateUserContactDetails(currentUserId, { name, email, phoneNumber, company }));
             console.log(signupData);
         };
-        }, [name, email, phoneNumber, company]);
+    }, [name, email, phoneNumber, company]);
     const handleInputChange = (setter) => (event) => {
         setter(event.target.value);
-    
+
     };
 
     return (
@@ -38,8 +38,8 @@ const ContactDetails = () => {
                             placeholder="Aditya Mishra"
                             value={name}
                             onChange={(event) => handleInputChange(setName, 'name')(event)}
-                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2"
-                        />                     
+                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2 pr-10" // Added pr-10
+                        />
                         <img src={Ecom} alt="Ecom" className="absolute top-1/2 transform -translate-y-1/2 right-4 h-6 w-5" />
                     </div>
                 </div>
@@ -51,8 +51,8 @@ const ContactDetails = () => {
                             placeholder="Email address"
                             value={email}
                             onChange={(event) => handleInputChange(setEmail, 'email')(event)}
-                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2"
-                        />           
+                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2 pr-10" // Added pr-10
+                        />
                         <img src={mail} alt="Healthcare" className="absolute top-1/2 transform -translate-y-1/2 right-4 h-6 w-5" />
                     </div>
                 </div>
@@ -66,7 +66,7 @@ const ContactDetails = () => {
                             placeholder="(123) 456 - 7890"
                             value={phoneNumber}
                             onChange={(event) => handleInputChange(setPhoneNumber, 'phoneNumber')(event)}
-                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2"
+                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2 pr-10" // Added pr-10
                         />
                         <img src={Marketing} alt="Marketing" className="absolute top-1/2 transform -translate-y-1/2 right-4 h-6 w-5" />
                     </div>
@@ -79,7 +79,7 @@ const ContactDetails = () => {
                             placeholder="Enter company name"
                             value={company}
                             onChange={(event) => handleInputChange(setCompany, 'company')(event)}
-                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2"
+                            className="w-full border-2 border-[#EFF0F6] rounded-3xl px-4 py-2 pr-10"
                         />
                         <img src={Company} alt="Settings" className="absolute top-1/2 transform -translate-y-1/2 right-4 h-6 w-5" />
                     </div>

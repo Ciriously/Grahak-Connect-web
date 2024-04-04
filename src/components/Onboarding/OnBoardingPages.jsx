@@ -10,18 +10,18 @@ import ProductDetails from './OnBoardPages/ProductDetails';
 import PluginCode from './OnBoardPages/PluginCode';
 
 const CompanyInfo = ({ subStep }) => {
-  return (
-    <>
-      {subStep === 1 && <Contactdetails />}
-      {subStep === 2 && <Companydetails />}
-      {subStep === 3 && <Companytype />}
-      {subStep === 4 && <Companyupload />}
-    </>
-  );
+    return (
+        <>
+            {subStep === 1 && <Contactdetails />}
+            {subStep === 2 && <Companydetails />}
+            {subStep === 3 && <Companytype />}
+            {subStep === 4 && <Companyupload />}
+        </>
+    );
 };
 
 const OnBoardingPages = () => {
-  
+
     const [step, setStep] = useState(1);
     const [subStep, setSubStep] = useState(1);
 
@@ -50,7 +50,7 @@ const OnBoardingPages = () => {
             <div className="flex items-center bg-[#B8E1E2] bg-opacity-40 justify-center h-screen">
                 <div className="container w-2/5 bg-white border shadow-lg rounded-[59px] mx-auto">
                     <header className="p-4">
-                    <Stepper currentStep={step} />
+                        <Stepper currentStep={step} />
                     </header>
                     <main className="flex-grow p-4">
                         {step === 1 && <SearchLang />}
@@ -59,17 +59,17 @@ const OnBoardingPages = () => {
                         {step === 4 && <PluginCode />}
                     </main>
                     <footer className="flex font-poppins justify-between mx-14 p-8">
-    {step !== 4 && (
-        <>
-            <button onClick={handlePrevious} className={`bg-white text-[#098F8A] border-2 border-[#098F8A] rounded-3xl px-4 py-3 ${step === 1 ? 'invisible' : 'visible'}`}>
-                Previous step
-            </button>
-            <button onClick={handleNext} className="bg-[#098F8A] text-white border-2 border-[#098F8A] rounded-3xl px-4 py-3">
-                Next step
-            </button>
-        </>
-    )}
-</footer>
+                        {step !== 4 && (
+                            <>
+                                <button onClick={handlePrevious} className={`bg-white text-[#098F8A] border-2 border-[#098F8A] rounded-3xl px-4 py-3 ${step === 1 ? 'invisible' : 'visible'}`}>
+                                    Previous step
+                                </button>
+                                <button onClick={handleNext} className="bg-[#098F8A] text-white border-2 border-[#098F8A] rounded-3xl px-4 py-3">
+                                    Next step
+                                </button>
+                            </>
+                        )}
+                    </footer>
                 </div>
             </div>
         </div>

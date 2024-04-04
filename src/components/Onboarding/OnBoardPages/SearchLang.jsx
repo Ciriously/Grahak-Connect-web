@@ -33,13 +33,13 @@ const SearchLang = () => {
 
     // Function to handle input change
     const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-    // Filter languages based on search term
-    const results = indianLanguages.filter(language =>
-        language.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setSearchResult(results);
-};
+        setSearchTerm(event.target.value);
+        // Filter languages based on search term
+        const results = indianLanguages.filter(language =>
+            language.toLowerCase().includes(event.target.value.toLowerCase())
+        );
+        setSearchResult(results);
+    };
 
     // Function to handle click on search result or random language
     const handleClick = (language) => {
@@ -69,18 +69,18 @@ const SearchLang = () => {
             </div>
             {/* Display search result */}
             {searchResult.length > 0 && (
-    <div className={`mt-4 bg-white rounded-2xl border-2 border-[#098F8A] p-4 font-poppins text-md`}>
-        {searchResult.map((result, index) => (
-            <div
-                key={index}
-                className={`cursor-pointer rounded-md p-2 mb-2 ${result === clickedText ? 'text-[#098F8A]' : 'text-[#170F49]'}`}
-                onClick={() => handleClick(result)}
-            >
-                {result}
-            </div>
-        ))}
-    </div>
-)}
+                <div className={`mt-4 bg-white rounded-2xl border-2 border-[#098F8A] p-4 font-poppins font-bold text-xl`}>
+                    {searchResult.map((result, index) => (
+                        <div
+                            key={index}
+                            className={`cursor-pointer rounded-md p-2 mb-2 ${result === clickedText ? 'text-[#098F8A]' : 'text-[#170F49]'}`}
+                            onClick={() => handleClick(result)}
+                        >
+                            {result}
+                        </div>
+                    ))}
+                </div>
+            )}
             {/* Display three random language names */}
             <div className="mt-4 bg-white rounded-2xl border-2 border-[#098F8A] p-4 font-poppins text-sm text-[#170F49]">
                 {randomLanguages.map((language, index) => (
